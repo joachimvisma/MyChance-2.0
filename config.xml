@@ -7,7 +7,7 @@
     <author email="joachim.strand@visma.com" href="http://www.visma.com">
         Visma Software AS Support Web Team
     </author>
-    <content src="www/index.html" />
+    <content src="index.html" />
     <preference name="orientation" value="portrait"/>
     <preference name="fullscreen" value="true"/>
     <preference name="show-splash-screen-spinner" value="true"/>
