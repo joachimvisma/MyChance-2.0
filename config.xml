@@ -22,6 +22,8 @@
     <gap:splash src="www/res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="port-hdpi"/>
     <gap:splash src="www/res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:qualifier="port-xhdpi"/>
     <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="com.carnivalmobile.carnivalcordovaplugin" />
+    <plugin name="cordova-plugin-network-information" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
