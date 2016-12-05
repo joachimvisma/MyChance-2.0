@@ -8,6 +8,19 @@
         Visma Software AS Support Web Team
     </author>
     <content src="www/index.html" />
+    <preference name="orientation" value="portrait"/>
+    <preference name="fullscreen" value="true"/>
+    <preference name="show-splash-screen-spinner" value="true"/>
+    <preference name="android-installLocation" value="auto"/>
+    <icon src="corp_mychance_logo_blue_96px.png"/>
+    <icon src="www/res/icon/android/corp_mychance_logo_blue_36px.png" gap:platform="android" gap:qualifier="ldpi"/>
+    <icon src="www/res/icon/android/corp_mychance_logo_blue_48px.png" gap:platform="android" gap:qualifier="mdpi"/>
+    <icon src="www/res/icon/android/corp_mychance_logo_blue_72px.png" gap:platform="android" gap:qualifier="hdpi"/>
+    <icon src="www/res/icon/android/corp_mychance_logo_blue_96px.png" gap:platform="android" gap:qualifier="xhdpi"/>
+    <gap:splash src="www/res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="port-ldpi"/>
+    <gap:splash src="www/res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="port-mdpi"/>
+    <gap:splash src="www/res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="port-hdpi"/>
+    <gap:splash src="www/res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:qualifier="port-xhdpi"/>
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
