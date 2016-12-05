@@ -34,5 +34,8 @@
         <preference name="carnival_android_app_key" value="166aefebd615f5e1078d1d0f3eb4f7ed771073f2" />
         <preference name="carnival_android_project_number" value="mychance-1372" />
     </platform>
+    <platform name="ios">
+        <preference name="carnival_ios_app_key" value="166aefebd615f5e1078d1d0f3eb4f7ed771073f2" />
+    </platform>
     <plugin name="com.carnivalmobile.carnivalcordovaplugin" spec="https://github.com/carnivalmobile/carnival-sdk-cordova.git" />
 </widget>
