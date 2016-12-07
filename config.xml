@@ -12,7 +12,8 @@
     <preference name="fullscreen" value="true" />
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="android-installLocation" value="auto" />
-    <icon src="corp_mychance_logo_blue_96px.png" />
+    <preference name="phonegap-version" value="cli-6.3.0" />
+    <icon src="www/corp_mychance_logo_blue_96px.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/corp_mychance_logo_blue_36px.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/corp_mychance_logo_blue_48px.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/corp_mychance_logo_blue_72px.png" />
