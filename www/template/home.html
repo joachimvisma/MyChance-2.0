@@ -3,11 +3,15 @@
 		<div id="left"></div>
 		<img src="img/logo.png">
 		MyChance
-		<div id="right">
-			<a href="javascript:;" onclick="app.logout()">X</a>
-		</div>
+		<div id="right"></div>
 	</div>
 </header>
+<a href="javascript:;" id="dropdown" onclick="app.dropdown()">&nbsp;</a>
+<nav>
+	<ul>
+		<li><a href="javascript:;" onclick="app.logout()">Logg ut</a></li>
+	</ul>
+</nav>
 <section id="content">
 	<div class="text-center-splash">
 		<img src="img/my_chance__refresh.png" class="loading_rotate">
@@ -39,7 +43,7 @@ function leadListInit(){
 		var thisLink = this;
 		$(thisLink).find("img").addClass("loading_rotate");
 		$("#content").empty().html('<div class="text-center-splash"><img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent</div>');
-		
+
 		Visma_Request.post(Visma_Config.getApiUrl('allLeads'), 'userid=' + Visma_Oaut.getToken('VLPOauthToken'), function(data){
 			$(thisLink).find("img").removeClass("loading_rotate");
 			if(data.success == true){

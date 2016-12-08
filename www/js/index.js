@@ -22,10 +22,13 @@ var app = {
         //$(this.onDeviceReady);
         Visma_Config.refreshConfig();
     },
-    /** 
+    /**
      * Device Ready
      */
     onDeviceReady: function() {
+		// Carnival initialize
+		Carnival.startEngine(true);
+
         // Checking login
     	if(!Visma_Oaut.isLoggedIn()){
     		Visma_Navigation.navigate('login');
@@ -37,34 +40,42 @@ var app = {
     			Visma_Navigation.navigate('home');
     		}
     	}
-    }, 
+    },
     onResume: function(){
     	// Checking login
     	if(!Visma_Oaut.isLoggedIn()){
     		Visma_Navigation.navigate('login');
     	}
-    }, 
+    },
     onBackKeyDown: function(){
     	Visma_Navigation.goBack();
     },
+	dropdown: function(){
+		var nav = $("nav");
+		if($(nav).css("display") == "none"){
+			$(nav).show();
+		} else {
+			$(nav).hide();
+		}
+	},
     /**
      * Logout
      */
     logout: function(){
     	if(confirm("Er du sikker på at du vil logge ut?")){
-    		
+
     		// Removing the token
     		Visma_Oaut.removeToken('VLPOauthToken');
-    		
+
     		// Removing carnival token
     		Carnival.setUserId(
 				function callback(data) {
 					console.log('logout setUserId successfully returned');
-			},
-			function errorHandler(err) {
-				console.log('logout setUserId returned error: ' + err);
-			}, null );
-    		
+				},
+				function errorHandler(err) {
+					console.log('logout setUserId returned error: ' + err);
+				}, null );
+
     		// Redirecting you
         	Visma_Navigation.navigate('login');
     	}
@@ -77,7 +88,7 @@ var app = {
     	if(this.pushListener == null){
     		this.pushListener = Visma_Request.doPushRequest();
     	}
-    }, 
+    },
     /**
      * Clear push
      */
@@ -87,23 +98,23 @@ var app = {
 };
 /**
  * Popup message
- * 
+ *
  * @param label
  * @param height
  */
 function popup(label, height){
 	var content = document.createElement("div");
 	$(content).attr("id", "popupContent").html(label);
-	
+
 	var box = document.createElement("div");
 	$(box).attr("id", "popupBox").append(content).css({
-		height : height + "px", 
+		height : height + "px",
 		top : "calc(50% - " + ( height / 2 ) + "px)"
 	});
-	
+
 	var shadow = document.createElement("div");
 	$(shadow).attr("id", "popupShadow").append(box);
-	
+
 	$("body").append(shadow);
 }
 function popupClose(){

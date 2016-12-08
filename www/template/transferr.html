@@ -5,11 +5,15 @@
 		</div>
 		<img src="img/logo.png">
 		MyChance
-		<div id="right">
-			<a href="javascript:;" onclick="app.logout()">X</a>
-		</div>
+		<div id="right"></div>
 	</div>
 </header>
+<a href="javascript:;" id="dropdown" onclick="app.dropdown()">&nbsp;</a>
+<nav>
+	<ul>
+		<li><a href="javascript:;" onclick="app.logout()">Logg ut</a></li>
+	</ul>
+</nav>
 <section id="content">
 	<div id="thisLead">
 		<div class="text-center-splash">
@@ -39,11 +43,11 @@ function transferrInit(){
 			$("#colleagues li").show();
 		}
 	});
-	
+
 	// Click
 	$("#colleagues li a").click(function(){
 		popup('<img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent', 170);
-		
+
 		var leadid = Visma_Request.get('leadid');
 		if(leadid == ''){
 			alert('Ingen leadID sendt!');
