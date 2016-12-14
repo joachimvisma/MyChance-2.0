@@ -40,6 +40,9 @@ if(leadid == ''){
  * Pageload for leads
  */
 function leadInit(){
+	resizeData();
+	$(window).resize(resizeData);
+
 	// Picking a case
 	$("#actionPickCase").click(function(){
 		popup('<img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent', 170);
@@ -93,6 +96,38 @@ function leadInit(){
 	$("#actionEmail").click(function(){
 		Visma_Navigation.navigate("predefemail");
 		return false;
+	});
+}
+
+// Function that will make sure that there is no h-scroll
+function resizeData(){
+
+	// Getting the reference
+	var reference = $(window).width();
+	var steps = 3; // How many charachters to remove
+
+	// Getting the startposition
+	var selected = $("#content ul.data li:first-child span.label");
+	var offset = $(selected).offset();
+	var width = $(selected).outerWidth(true);
+	var left = parseInt(offset.left) + width;
+
+	// Formatting if long values
+	$("#content ul.data li").each(function(){
+		var overshoot = reference - ( left + $("span.value", this).outerWidth(true) );
+		if(overshoot < 50){
+			while (overshoot < 50) {
+				var html = $("span.value", this).html();
+				html = html.substring(0, ( html.length - steps ));
+				$("span.value", this).html(html);
+				overshoot = reference - ( left + $("span.value", this).outerWidth(true) );
+				console.log('Shrinked with ' + steps + ' steps with new overshoot value of ' + overshoot);
+			}
+
+			// Adding the trail
+			html = $("span.value", this).html();
+			$("span.value", this).html(html + "...");
+		}
 	});
 }
 </script>

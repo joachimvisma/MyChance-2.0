@@ -10,6 +10,7 @@ var app = {
      * Application contructor
      */
     initialize: function() {
+		Visma_Config.refreshConfig();
         this.bindEvents();
     },
     /**
@@ -20,7 +21,6 @@ var app = {
     	document.addEventListener('resume', this.onResume, false);
     	document.addEventListener('backbutton', this.onBackKeyDown, false);
         //$(this.onDeviceReady);
-        Visma_Config.refreshConfig();
     },
     /**
      * Device Ready

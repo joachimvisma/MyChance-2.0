@@ -18,7 +18,7 @@ header div#left { position: absolute; left: 3%; top: 35px; }
 header div#right { position: absolute; right: 3%; top: 35px; }
 
 /* Dropdown link */
-a#dropdown:link, a#dropdown:visited { position: absolute; top: 0; right: 0; height: 70px; width: 60px; background: transparent url("../img/android_menu.png") no-repeat 13px 26px; background-size: 40px; z-index: 1000; }
+a#dropdown:link, a#dropdown:visited { position: fixed; top: 0; right: 0; height: 70px; width: 60px; background: transparent url("../img/android_menu.png") no-repeat 13px 26px; background-size: 40px; z-index: 1000; }
 a#dropdown.selected:link, a#dropdown.selected:visited {  }
 
 header a:link, header a:visited { color: #fff; display: block; text-decoration: none; font-weight: 400; }
@@ -46,7 +46,7 @@ nav ul li a.active:link, nav ul li a.active:visited {  }
 */
 
 /* Dropdown navigation */
-nav { position: absolute; top: 70px; left: 0; right: 0; z-index: 1000; display: none; }
+nav { position: fixed; top: 70px; left: 0; right: 0; z-index: 1000; display: none; }
 nav ul { margin: 0; padding: 0; list-style-type: none; float: left; width: 100%; }
 nav ul li { display: block; float: left; width: 100%; clear: both; background-color: rgba(0,0,0,.8); border-bottom: 1px solid rgba(0,0,0,.4); }
 
@@ -118,7 +118,7 @@ ul.data li a:active {  }
 ul.data li span { display: block; float: left; }
 ul.data li span.label { color: #6D6D6D; padding-right: 10px; text-align: right; width: 20%; min-width: 70px; }
 ul.data li span.label:after { content: ':'; }
-ul.data li span.value { width: 65%; }
+ul.data li span.value { min-width: 65%; }
 
 .faded_info { color: #777; font-style: italic; }
 
