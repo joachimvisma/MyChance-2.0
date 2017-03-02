@@ -29,6 +29,9 @@ var app = {
 		// Carnival initialize
 		Carnival.startEngine(true);
 
+		// Always showing the status bar
+	   	AndroidFullScreen.showSystemUI();
+
         // Checking login
     	if(!Visma_Oaut.isLoggedIn()){
     		Visma_Navigation.navigate('login');
@@ -42,6 +45,10 @@ var app = {
     	}
     },
     onResume: function(){
+
+		// Always showing the status bar
+	    AndroidFullScreen.showSystemUI();
+
     	// Checking login
     	if(!Visma_Oaut.isLoggedIn()){
     		Visma_Navigation.navigate('login');

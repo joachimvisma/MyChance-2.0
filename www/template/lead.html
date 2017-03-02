@@ -63,6 +63,25 @@ function leadInit(){
 		return false;
 	});
 
+	// Sending a case via mail
+	$("#actionSendCase").click(function(){
+		popup('<img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent', 170);
+		Visma_Request.post(Visma_Config.getApiUrl('sendLead'), 'userid=' + Visma_Oaut.getToken('VLPOauthToken') + '&leadid=' + leadid, function(data){
+			if(data.success == true){
+				popupClose();
+				if(data.data == false){
+					popup('<h2>Oops!</h2>Det oppstod en feil, kontakt system administrator for mer info<br><a href="javascript:;" onClick="popupClose();" class="submit popup">OK</a>', 206);
+				} else {
+					popup('<h2>E-post sendt!</h2>Leadet er sendt til din epost<br><a href="javascript:;" onClick="popupClose();" class="submit popup">OK</a>', 206);
+				}
+			} else {
+				alert("En uventet feil oppstod");
+				console.log(data);
+			}
+		});
+		return false;
+	});
+
 	// Transferring a case
 	$("#actionTrasferr").click(function(){
 		Visma_Navigation.navigate("transferr");

@@ -1,0 +1,53 @@
+<header>
+	<div id="title">
+		<div id="left">
+			<a href="javascript:;" class="back" onclick="Visma_Navigation.goBack()">&nbsp;</a>
+		</div>
+		<img src="img/logo.png">
+		MyChance
+		<div id="right"></div>
+	</div>
+</header>
+<a href="javascript:;" id="dropdown" onclick="app.dropdown()">&nbsp;</a>
+<nav>
+	<ul>
+		<li><a href="javascript:;" onclick="app.logout()">Logg ut</a></li>
+	</ul>
+</nav>
+<section id="content">
+	<br clear="all">
+	<form action="" id="FeedbackForm">
+		<fieldset>
+			<label for="note">Gi Visma tilbakemelding</label>
+			<textarea name="note" id="note" class="text"></textarea>
+		</fieldset>
+	</form>
+</section>
+<footer>
+	<div id="margin">
+		<a href="javascript:;" class="submit" id="actionGiveFeedback">Gi Visma tilbakemelding</a>
+	</div>
+</footer>
+<script>
+var leadid = Visma_Request.get('leadid');
+var selectedStatus = Visma_Request.get('statusid');
+if(leadid == ''){
+	alert('Ingen leadID sendt!');
+	Visma_Navigation.navigate('home');
+} else {
+	$("#actionGiveFeedback").click(function(){
+		popup('<img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent', 170);
+
+        var note = $("#FeedbackForm #note").val();
+        Visma_Request.post(Visma_Config.getApiUrl('setstatus'), 'userid=' + Visma_Oaut.getToken('VLPOauthToken') + '&leadid=' + leadid + '&statusid=' + selectedStatus + '&note=' + note, function(data){
+            if(data.success == true){
+                popupClose();
+                Visma_Navigation.navigate('lead');
+            } else {
+                alert("En uventet feil oppstod");
+                console.log(data);
+            }
+        });
+		return false;
+	});
+}

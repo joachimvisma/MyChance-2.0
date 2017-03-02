@@ -4,14 +4,14 @@ var Visma_Navigation = {
 		if(typeof get == 'string' && get != ''){
 			window.location = '#' + get;
 		}
-		var url = (raw === true) ? template : 'template/' + template + '.html';
-		
+		var url = (raw === true) ? template : 'template/' + template + '.html?_=' + new Date().getTime();
+
 		if(template.indexOf('login') == -1){
 			pageHistory.push(url);
 		}
-		
+
 		$.ajax({
-			url : url, 
+			url : url,
 			success : function(data){
 				$("#mainContent").empty().html(data);
 				if(typeof success == 'function'){
@@ -25,7 +25,7 @@ var Visma_Navigation = {
 				console.log(data3);
 			}
 		});
-	}, 
+	},
 	goBack : function (){
 		var current = pageHistory.pop();
 		if(pageHistory.length < 2 && current != 'home'){
@@ -34,10 +34,10 @@ var Visma_Navigation = {
 		} else if(pageHistory.length < 2){
 			return true;
 		}
-		
+
 		var prev = pageHistory.pop();
 		this.navigate(prev, null, null, true);
-		
+
 		return false;
 	}
 };

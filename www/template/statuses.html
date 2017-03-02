@@ -43,7 +43,9 @@ function statusestInit(){
 			if($(this).find("span").is(".cancel")){
 				Visma_Navigation.navigate('lost');
 			} else {
-				popup('<img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent', 170);
+				Visma_Navigation.navigate('feedback', 'leadid=' + leadid + '&statusid=' + $(this).attr("data-status-id"));
+				return false;
+				/*popup('<img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent', 170);
 				Visma_Request.post(Visma_Config.getApiUrl('setstatus'), 'userid=' + Visma_Oaut.getToken('VLPOauthToken') + '&leadid=' + leadid + '&statusid=' + $(this).attr("data-status-id"), function(data){
 					if(data.success == true){
 						popupClose();
@@ -52,7 +54,7 @@ function statusestInit(){
 						alert("En uventet feil oppstod");
 						console.log(data);
 					}
-				});
+				});*/
 			}
 		}
 		return false;

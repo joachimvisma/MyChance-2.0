@@ -19,6 +19,7 @@
 			<setreject>http://localhost/leadsapp/api/setrejected</setreject>
 			<predefemail>http://localhost/leadsapp/api/predefemail</predefemail>
 			<predefsms>http://localhost/leadsapp/api/predefsms</predefsms>
+			<sendLead>http://localhost/leadsapp/api/sendlead</sendLead>
 		</dev>
 		<test>
 			<login>http://testportal.vismasoftware.com/software/support/portal/leadsapp/api/login</login>
@@ -34,6 +35,7 @@
 			<setreject>http://testportal.vismasoftware.com/software/support/portal/leadsapp/api/setrejected</setreject>
 			<predefemail>http://testportal.vismasoftware.com/software/support/portal/leadsapp/api/predefemail</predefemail>
 			<predefsms>http://testportal.vismasoftware.com/software/support/portal/leadsapp/api/predefsms</predefsms>
+			<sendLead>http://testportal.vismasoftware.com/software/support/portal/leadsapp/api/sendlead</sendLead>
 		</test>
 		<stag />
 		<prod />
