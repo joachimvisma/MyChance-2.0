@@ -39,5 +39,12 @@ var Visma_Navigation = {
 		this.navigate(prev, null, null, true);
 
 		return false;
+	},
+	resetNavigation : function(template){
+		if(template != undefined){
+			pageHistory = [template];
+		} else {
+			pageHistory = [];
+		}
 	}
 };

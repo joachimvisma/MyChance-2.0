@@ -39,9 +39,12 @@ if(leadid == ''){
 		popup('<img src="img/my_chance__refresh.png" class="loading_rotate"><br><br>Laster<br>Vennligst vent', 170);
 
         var note = $("#FeedbackForm #note").val();
-        Visma_Request.post(Visma_Config.getApiUrl('setstatus'), 'userid=' + Visma_Oaut.getToken('VLPOauthToken') + '&leadid=' + leadid + '&statusid=' + selectedStatus + '&note=' + note, function(data){
+		var date = new Date();
+		var time = date.getHours() + ":" + date.getMinutes();
+        Visma_Request.post(Visma_Config.getApiUrl('setstatus'), 'userid=' + Visma_Oaut.getToken('VLPOauthToken') + '&leadid=' + leadid + '&statusid=' + selectedStatus + '&time=' + time + '&note=' + note, function(data){
             if(data.success == true){
                 popupClose();
+				Visma_Navigation.resetNavigation('home');
                 Visma_Navigation.navigate('lead');
             } else {
                 alert("En uventet feil oppstod");

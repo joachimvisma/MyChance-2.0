@@ -25,6 +25,8 @@ a#dropdown.selected:link, a#dropdown.selected:visited {  }
 header a:link, header a:visited { color: #fff; display: block; text-decoration: none; font-weight: 400; }
 header a.back:link, header a.back:visited { background: transparent url("../img/back.png") no-repeat left bottom; padding-left: 20px; padding-bottom: 1px; }
 
+header a.logo { font-size: 1.3rem; }
+
 footer { position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff; }
 footer #margin { margin: 3%; }
 footer a { margin-bottom: 3%; }
@@ -55,8 +57,8 @@ nav ul li a:link, nav ul li a:visited { display: block; float: left; text-decora
 nav ul li a.active:link, nav ul li a.active:visited {  }
 
 /* POPUP */
-#popupShadow { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,.5); z-index: 1000; }
-#popupShadow #popupBox { position: absolute; background-color: #f0f0f0; box-shadow: 0 0 35px rgba(0, 0, 0, 0.8); left: 25%; width: 50%; }
+#popupShadow { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,.5); z-index: 1000; }
+#popupShadow #popupBox { position: fixed; background-color: #f0f0f0; box-shadow: 0 0 35px rgba(0, 0, 0, 0.8); left: 25%; width: 50%; }
 #popupShadow #popupBox #popupContent { text-align: center; padding: 40px 0; }
 
 
@@ -122,7 +124,7 @@ ul.data li a:active {  }
 ul.data li span { display: block; float: left; }
 ul.data li span.label { color: #6D6D6D; padding-right: 10px; text-align: right; width: 20%; min-width: 70px; }
 ul.data li span.label:after { content: ':'; }
-ul.data li span.value { min-width: 65%; }
+ul.data li span.value { min-width: 65%; max-width: 65%; }
 
 .faded_info { color: #777; font-style: italic; }
 

@@ -57,6 +57,7 @@ function transferrInit(){
 			Visma_Request.post(Visma_Config.getApiUrl('transferr'), 'userid=' + Visma_Oaut.getToken('VLPOauthToken') + '&leadid=' + leadid + '&newuserid=' + $(this).attr("data-id"), function(data){
 				if(data.success == true){
 					popupClose();
+					Visma_Navigation.resetNavigation();
 					Visma_Navigation.navigate('home');
 				} else {
 					alert("En uventet feil oppstod");

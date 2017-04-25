@@ -132,7 +132,7 @@ function resizeData(){
 	var left = parseInt(offset.left) + width;
 
 	// Formatting if long values
-	$("#content ul.data li").each(function(){
+	$("#content ul.data li").not(".product").each(function(){
 		var overshoot = reference - ( left + $("span.value", this).outerWidth(true) );
 		if(overshoot < 50){
 			while (overshoot < 50) {
